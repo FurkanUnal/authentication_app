@@ -1,3 +1,4 @@
+import 'package:authentication_app/Presenter/presenter.dart';
 import 'package:authentication_app/Router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:authentication_app/Interactor/login_interactor.dart';
@@ -21,7 +22,7 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextField(
-                controller: LoginUser.username,
+                controller: Presenter.username,
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(), hintText: "Username"),
               ),
@@ -29,7 +30,7 @@ class LoginPage extends StatelessWidget {
                 height: 20,
               ),
               TextField(
-                controller: LoginUser.password,
+                controller: Presenter.password,
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(), hintText: "Password"),
               ),
