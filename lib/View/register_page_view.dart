@@ -1,8 +1,6 @@
 import 'package:authentication_app/Presenter/register_presenter.dart';
 import 'package:flutter/material.dart';
 
-import '../Presenter/login_presenter.dart';
-
 class RegisterPage extends StatelessWidget {
   RegisterPage({Key? key}) : super(key: key);
 

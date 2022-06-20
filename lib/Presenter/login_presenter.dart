@@ -5,7 +5,7 @@ import '../Router/login_router.dart';
 class LoginPresenter extends LoginUser {
   Future<Widget> login(BuildContext context) async {
     if (!(username == null || password == null)) {
-      signIn();
+      await signIn();
       if (isAuthenticated) {
         const snackBar = SnackBar(
           content: Text("You have been logged in successfully"),
