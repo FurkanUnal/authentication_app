@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../Interactor/login_interactor.dart';
-import '../Router/router.dart';
+import '../Router/login_router.dart';
 
-class Presenter extends LoginUser {
+class LoginPresenter extends LoginUser {
   Future<Widget> login(BuildContext context) async {
     if (!(username == null || password == null)) {
       signIn();

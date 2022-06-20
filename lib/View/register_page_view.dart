@@ -1,16 +1,18 @@
-import 'package:authentication_app/Presenter/login_presenter.dart';
+import 'package:authentication_app/Presenter/register_presenter.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({Key? key}) : super(key: key);
+import '../Presenter/login_presenter.dart';
 
-  LoginPresenter presenter = LoginPresenter();
+class RegisterPage extends StatelessWidget {
+  RegisterPage({Key? key}) : super(key: key);
+
+  RegisterPresenter presenter = RegisterPresenter();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Login Page Example"),
+        title: const Text("Register Page"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -32,13 +34,21 @@ class LoginPage extends StatelessWidget {
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(), hintText: "Password"),
               ),
+              const SizedBox(
+                height: 20,
+              ),
+              TextField(
+                controller: presenter.passwordConfirm,
+                decoration: const InputDecoration(
+                    border: OutlineInputBorder(), hintText: "Confirm the Password"),
+              ),
               Padding(
                 padding: const EdgeInsets.all(5),
                 child: ElevatedButton(
                   onPressed: () async {
-                    presenter.login(context);
+                    presenter.register(context);
                   },
-                  child: const Text("Log in"),
+                  child: const Text("Register"),
                 ),
               )
             ],
@@ -48,6 +58,3 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
-
-
-

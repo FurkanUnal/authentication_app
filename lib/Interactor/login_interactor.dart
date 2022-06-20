@@ -7,7 +7,9 @@ class LoginUser {
   TextEditingController username = TextEditingController();
   TextEditingController password = TextEditingController();
 
+  List<User> users = [];
   User admin = User(username: "admin", password: "123");
+
 
   bool isAuthenticated = false;
 
