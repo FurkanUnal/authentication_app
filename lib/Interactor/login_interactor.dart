@@ -1,14 +1,22 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/editable_text.dart';
 import '../Entity/user.dart';
-import '../Presenter/presenter.dart';
+
 
 class LoginUser {
+  TextEditingController username = TextEditingController();
+  TextEditingController password = TextEditingController();
+
   User admin = User(username: "admin", password: "123");
 
-  bool isAuthenticated() {
-    if (Presenter.username.value.text == admin.username &&
-        Presenter.password.value.text == admin.password) {
-      return true;
+  bool isAuthenticated = false;
+
+  Future<void> signIn() async {
+    if (username.value.text == admin.username &&
+        password.value.text == admin.password) {
+      isAuthenticated = true;
+    } else {
+      isAuthenticated = false;
     }
-    return false;
   }
 }
